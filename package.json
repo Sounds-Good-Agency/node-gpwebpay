@@ -1,5 +1,5 @@
 {
-  "name": "@topmonks/gpwebpay",
+  "name": "@sga/gpwebpay",
   "version": "0.1.2",
   "description": "",
   "main": "lib/index.js",
@@ -11,8 +11,8 @@
     "test-dev": "jest --runInBand --watchAll"
   },
   "keywords": [],
-  "author": "David Stuller",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^26.0.8",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
@@ -25,14 +25,9 @@
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.9"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/topmonks/node-gpwebpay.git"
-  },
   "prettier": {
     "singleQuote": true,
     "semi": false,
     "trailingComma": "none"
-  },
-  "homepage": "https://github.com/topmonks/node-gpwebpay/blob/main/README.md"
+  }
 }

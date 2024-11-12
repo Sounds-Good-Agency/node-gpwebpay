@@ -2,7 +2,10 @@ import crypto from 'crypto'
 import { GpWebpayOperation } from './GPWebpay'
 
 enum GpWebpayRequestCurrency {
-  CZK = '203'
+  CZK = '203',
+  EUR = '978',
+  RON = '946',
+  HUF = '348'
 }
 
 enum GpWebpayRequestPaymentMethod {
