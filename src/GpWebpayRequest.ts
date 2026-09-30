@@ -5,7 +5,8 @@ enum GpWebpayRequestCurrency {
   CZK = '203',
   EUR = '978',
   RON = '946',
-  HUF = '348'
+  HUF = '348',
+  PLN = '985'
 }
 
 enum GpWebpayRequestPaymentMethod {

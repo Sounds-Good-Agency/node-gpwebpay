@@ -38,6 +38,20 @@ test('get new payment redirect url', () => {
   )
 })
 
+test('get new payment redirect url - PLN', () => {
+  const request = new GpWebpayRequest(
+    GpWebpayOperation.CREATE_ORDER,
+    3009,
+    8498,
+    GpWebpayRequestCurrency.PLN,
+    'https://www.dswd.cz/'
+  )
+
+  const redirectUrl = client.getRequestUrl(request)
+
+  expect(redirectUrl).toContain('&AMOUNT=8498&CURRENCY=985&')
+})
+
 test('create response - OK', () => {
   const data = client.parseQueryString(
     'OPERATION=CREATE_ORDER&ORDERNUMBER=3010&RESULTTEXT=OK&PRCODE=0&SRCODE=0&DIGEST=P%2F8XSc9CeQQbftK54QE3Zq%2FCBy7mwc2UkZOKXoZYTJfx1Va8w77f22320otzHYsnFE%2F1MWYfVnG0bi9XfoJZtNYWIty0wUQTvuoKsKF4xucGmCCa4xSM98myOJwOFVK5qeTUfGPUq8emwxhPg1FMuV3JiIo%2F1i3I1DjLtAUeswBFn5LXm8ppZrz7EB%2BwG94ZIIvU4m%2B%2F%2BUX8%2FzQpdMeGAD%2FdOMmJ5bBtrHOyhaAdtaR%2Fq%2BnKkKl0rp1F7gkospSWKBWLZKLdaSvqCY11eBup3FgNGBJnGL7%2BhhwU43vhnkA1jFBdsMITQ%2F%2B0oDKzc2kxDUvFK9QKB5XG4GZyGY4fJA%3D%3D&DIGEST1=On52y4aobLKQ%2BU%2BieALjBZbbFc8W%2F3KmRMAp4FIIPlRD5dQRGMc0O0noXpj7NTp3dV1uUkYQKMSPI%2FFhoVir%2BYHCUG3K6EJl%2BXUsoIbykZsAUQZCs3G61iqSGsozSHS8b64HEnDSI0eleLGoheKSd1LgrTxeHUpfsg%2FOHTqoHEd5wA%2Bj7h%2BpZwR63ExL6Zswj1SeLKIPAeCRJTthLuzBQWLgSgG2fkTNkFFu%2Bka0le1AJxm9%2FAxSRXKM7cU2y5%2Bt1wcreE2J9Zx7E8BdFr8%2BFeKkFVkdoaSItYUUDY4nNfIQsUWkQZ1GDVsV21Sj%2F7dIDbmzHPTsJIMeWZR38JKaKQ%3D%3D'
